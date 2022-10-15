@@ -10,6 +10,7 @@
 		DA89F81F28FAB7DB001902FE /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F81E28FAB7DB001902FE /* RESTClient.swift */; };
 		DA89F82328FAB82C001902FE /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82128FAB82C001902FE /* SearchResponse.swift */; };
 		DA89F82428FAB82C001902FE /* FilmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82228FAB82C001902FE /* FilmResponse.swift */; };
+		DA89F82628FACBF0001902FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA89F82528FACBF0001902FE /* GoogleService-Info.plist */; };
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		DA89F81E28FAB7DB001902FE /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		DA89F82128FAB82C001902FE /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		DA89F82228FAB82C001902FE /* FilmResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmResponse.swift; sourceTree = "<group>"; };
+		DA89F82528FACBF0001902FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				DAF2365228FAB4E500D40644 /* AppDelegate.swift */,
 				DAF2365428FAB4E500D40644 /* SceneDelegate.swift */,
+				DA89F82528FACBF0001902FE /* GoogleService-Info.plist */,
 				DAF2366028FAB4E600D40644 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -180,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAF2365F28FAB4E600D40644 /* LaunchScreen.storyboard in Resources */,
+				DA89F82628FACBF0001902FE /* GoogleService-Info.plist in Resources */,
 				DAF2365C28FAB4E600D40644 /* Assets.xcassets in Resources */,
 				DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */,
 			);
