@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
-		DAF2365728FAB4E500D40644 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365628FAB4E500D40644 /* ViewController.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
 		DAF2365C28FAB4E600D40644 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365B28FAB4E600D40644 /* Assets.xcassets */; };
 		DAF2365F28FAB4E600D40644 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365D28FAB4E600D40644 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DAF2365628FAB4E500D40644 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DAF2365928FAB4E500D40644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DAF2365B28FAB4E600D40644 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAF2365E28FAB4E600D40644 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +35,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA89F81928FAB5FF001902FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2365228FAB4E500D40644 /* AppDelegate.swift */,
+				DAF2365428FAB4E500D40644 /* SceneDelegate.swift */,
+				DAF2366028FAB4E600D40644 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA89F81A28FAB617001902FE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2365B28FAB4E600D40644 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DA89F81B28FAB67F001902FE /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DAF2365D28FAB4E600D40644 /* LaunchScreen.storyboard */,
+				DAF2365828FAB4E500D40644 /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		DAF2364628FAB4E500D40644 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +81,9 @@
 		DAF2365128FAB4E500D40644 /* MovieBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				DAF2365228FAB4E500D40644 /* AppDelegate.swift */,
-				DAF2365428FAB4E500D40644 /* SceneDelegate.swift */,
-				DAF2365628FAB4E500D40644 /* ViewController.swift */,
-				DAF2365828FAB4E500D40644 /* Main.storyboard */,
-				DAF2365B28FAB4E600D40644 /* Assets.xcassets */,
-				DAF2365D28FAB4E600D40644 /* LaunchScreen.storyboard */,
-				DAF2366028FAB4E600D40644 /* Info.plist */,
+				DA89F81928FAB5FF001902FE /* Supporting Files */,
+				DA89F81A28FAB617001902FE /* Resources */,
+				DA89F81B28FAB67F001902FE /* Screens */,
 			);
 			path = MovieBrowser;
 			sourceTree = "<group>";
@@ -138,7 +159,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAF2365728FAB4E500D40644 /* ViewController.swift in Sources */,
 				DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */,
 				DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +309,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NHQZB346D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieBrowser/Info.plist;
+				INFOPLIST_FILE = "MovieBrowser/Supporting Fies/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NHQZB346D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MovieBrowser/Info.plist;
+				INFOPLIST_FILE = "MovieBrowser/Supporting Fies/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
