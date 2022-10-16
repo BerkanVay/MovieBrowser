@@ -9,12 +9,13 @@ import Foundation
 import FirebaseRemoteConfig
 
 class FirebaseRemoteConfigService {
+  static let shared = FirebaseRemoteConfigService()
   weak var delegate: FirebaseRemoteConfigDelegate?
   
   var splashText: String? {
     remoteConfig.configValue(forKey: "splash_text").stringValue
   }
-  
+  var isFetched = false
   private var remoteConfig = RemoteConfig.remoteConfig()
   
   init() {
@@ -40,6 +41,7 @@ class FirebaseRemoteConfigService {
         print("Failed to fetch. Status: \(status)")
       } else {
         delegate?.fetchedRemoteConfig()
+        isFetched = true
       }
     } catch {
       // TODO: Handle the error.

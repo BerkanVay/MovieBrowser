@@ -14,6 +14,9 @@
 		DA89F82928FACD89001902FE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F82828FACD89001902FE /* FirebaseRemoteConfigSwift */; };
 		DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfig.swift */; };
 		DA89F82E28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82D28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift */; };
+		DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83028FAD6D3001902FE /* SplashViewController.swift */; };
+		DA89F83428FAE003001902FE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F83328FAE003001902FE /* FirebaseAnalytics */; };
+		DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */; };
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
@@ -28,6 +31,8 @@
 		DA89F82528FACBF0001902FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfig.swift; sourceTree = "<group>"; };
 		DA89F82D28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigDelegate.swift; sourceTree = "<group>"; };
+		DA89F83028FAD6D3001902FE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusObserver.swift; sourceTree = "<group>"; };
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA89F83428FAE003001902FE /* FirebaseAnalytics in Frameworks */,
 				DA89F82928FACD89001902FE /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +77,7 @@
 		DA89F81B28FAB67F001902FE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				DA89F82F28FAD6B1001902FE /* Splash */,
 				DAF2365D28FAB4E600D40644 /* LaunchScreen.storyboard */,
 				DAF2365828FAB4E500D40644 /* Main.storyboard */,
 			);
@@ -81,18 +88,19 @@
 			isa = PBXGroup;
 			children = (
 				DA89F82A28FAD0DA001902FE /* Firebase Remote Config */,
-				DA89F81D28FAB729001902FE /* REST */,
+				DA89F81D28FAB729001902FE /* REST Client */,
+				DA89F83928FC61DD001902FE /* Network Status Observer */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		DA89F81D28FAB729001902FE /* REST */ = {
+		DA89F81D28FAB729001902FE /* REST Client */ = {
 			isa = PBXGroup;
 			children = (
 				DA89F82028FAB7F1001902FE /* Models */,
 				DA89F81E28FAB7DB001902FE /* RESTClient.swift */,
 			);
-			path = REST;
+			path = "REST Client";
 			sourceTree = "<group>";
 		};
 		DA89F82028FAB7F1001902FE /* Models */ = {
@@ -113,11 +121,35 @@
 			path = "Firebase Remote Config";
 			sourceTree = "<group>";
 		};
+		DA89F82F28FAD6B1001902FE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				DA89F83028FAD6D3001902FE /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		DA89F83228FAE003001902FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA89F83928FC61DD001902FE /* Network Status Observer */ = {
+			isa = PBXGroup;
+			children = (
+				DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */,
+			);
+			path = "Network Status Observer";
+			sourceTree = "<group>";
+		};
 		DAF2364628FAB4E500D40644 = {
 			isa = PBXGroup;
 			children = (
 				DAF2365128FAB4E500D40644 /* MovieBrowser */,
 				DAF2365028FAB4E500D40644 /* Products */,
+				DA89F83228FAE003001902FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +190,7 @@
 			name = MovieBrowser;
 			packageProductDependencies = (
 				DA89F82828FACD89001902FE /* FirebaseRemoteConfigSwift */,
+				DA89F83328FAE003001902FE /* FirebaseAnalytics */,
 			);
 			productName = MovieBrowser;
 			productReference = DAF2364F28FAB4E500D40644 /* MovieBrowser.app */;
@@ -224,7 +257,9 @@
 				DA89F82428FAB82C001902FE /* FilmResponse.swift in Sources */,
 				DA89F81F28FAB7DB001902FE /* RESTClient.swift in Sources */,
 				DA89F82E28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift in Sources */,
+				DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */,
 				DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */,
+				DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,12 +408,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NHQZB346D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MovieBrowser/Supporting Fies/Info.plist";
+				INFOPLIST_FILE = "MovieBrowser/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,12 +435,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6NHQZB346D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MovieBrowser/Supporting Fies/Info.plist";
+				INFOPLIST_FILE = "MovieBrowser/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +492,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA89F82728FACD89001902FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
+		};
+		DA89F83328FAE003001902FE /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA89F82728FACD89001902FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
