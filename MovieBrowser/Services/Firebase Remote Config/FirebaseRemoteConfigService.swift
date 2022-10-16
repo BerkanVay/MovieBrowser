@@ -1,5 +1,5 @@
 //
-//  FirebaseRemoteConfig.swift
+//  FirebaseRemoteConfigService.swift
 //  MovieBrowser
 //
 //  Created by Mustafa Berkan Vay on 15.10.2022.
@@ -10,19 +10,40 @@ import FirebaseRemoteConfig
 
 class FirebaseRemoteConfigService {
   static let shared = FirebaseRemoteConfigService()
-  weak var delegate: FirebaseRemoteConfigDelegate?
+  weak var delegate: FirebaseRemoteConfigServiceDelegate?
   
   var splashText: String? {
     remoteConfig.configValue(forKey: "splash_text").stringValue
   }
-  var isFetched = false
+  var isFetched = false {
+    didSet {
+      if isFetched {
+        delegate?.fetchedRemoteConfig()
+      }
+    }
+  }
   private var remoteConfig = RemoteConfig.remoteConfig()
   
-  init() {
+  private init() {
     configureRemoteConfig()
     
     Task {
       await fetch()
+    }
+  }
+  
+  func fetch() async {
+    do {
+      let status = try await remoteConfig.fetchAndActivate()
+      
+      if status != .successFetchedFromRemote && status != .successUsingPreFetchedData {
+        print("Failed to fetch. Status: \(status)")
+      } else {
+        isFetched = true
+      }
+    } catch {
+      // TODO: Handle the error.
+      print(error)
     }
   }
   
@@ -31,22 +52,6 @@ class FirebaseRemoteConfigService {
     settings.minimumFetchInterval = 0
     
     remoteConfig.configSettings = settings
-  }
-  
-  private func fetch() async {
-    do {
-      let status = try await remoteConfig.fetchAndActivate()
-      
-      if status != .successFetchedFromRemote && status != .successUsingPreFetchedData {
-        print("Failed to fetch. Status: \(status)")
-      } else {
-        delegate?.fetchedRemoteConfig()
-        isFetched = true
-      }
-    } catch {
-      // TODO: Handle the error.
-      print(error)
-    }
   }
 }
 

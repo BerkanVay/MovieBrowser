@@ -1,5 +1,5 @@
 //
-//  FirebaseRemoteConfigDelegate.swift
+//  FirebaseRemoteConfigServiceDelegate.swift
 //  MovieBrowser
 //
 //  Created by Mustafa Berkan Vay on 15.10.2022.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol FirebaseRemoteConfigDelegate: AnyObject {
+protocol FirebaseRemoteConfigServiceDelegate: AnyObject {
   func fetchedRemoteConfig()
 }

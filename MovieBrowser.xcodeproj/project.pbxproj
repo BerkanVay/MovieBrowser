@@ -12,11 +12,12 @@
 		DA89F82428FAB82C001902FE /* FilmResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82228FAB82C001902FE /* FilmResponse.swift */; };
 		DA89F82628FACBF0001902FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA89F82528FACBF0001902FE /* GoogleService-Info.plist */; };
 		DA89F82928FACD89001902FE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F82828FACD89001902FE /* FirebaseRemoteConfigSwift */; };
-		DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfig.swift */; };
-		DA89F82E28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82D28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift */; };
+		DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfigService.swift */; };
+		DA89F82E28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F82D28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift */; };
 		DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83028FAD6D3001902FE /* SplashViewController.swift */; };
 		DA89F83428FAE003001902FE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F83328FAE003001902FE /* FirebaseAnalytics */; };
 		DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */; };
+		DA89F83B28FC6292001902FE /* NetworkStatusObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83A28FC6292001902FE /* NetworkStatusObserverDelegate.swift */; };
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
@@ -29,10 +30,11 @@
 		DA89F82128FAB82C001902FE /* SearchResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		DA89F82228FAB82C001902FE /* FilmResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmResponse.swift; sourceTree = "<group>"; };
 		DA89F82528FACBF0001902FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfig.swift; sourceTree = "<group>"; };
-		DA89F82D28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigDelegate.swift; sourceTree = "<group>"; };
+		DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigService.swift; sourceTree = "<group>"; };
+		DA89F82D28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseRemoteConfigServiceDelegate.swift; sourceTree = "<group>"; };
 		DA89F83028FAD6D3001902FE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusObserver.swift; sourceTree = "<group>"; };
+		DA89F83A28FC6292001902FE /* NetworkStatusObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusObserverDelegate.swift; sourceTree = "<group>"; };
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,8 +117,8 @@
 		DA89F82A28FAD0DA001902FE /* Firebase Remote Config */ = {
 			isa = PBXGroup;
 			children = (
-				DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfig.swift */,
-				DA89F82D28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift */,
+				DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfigService.swift */,
+				DA89F82D28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift */,
 			);
 			path = "Firebase Remote Config";
 			sourceTree = "<group>";
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */,
+				DA89F83A28FC6292001902FE /* NetworkStatusObserverDelegate.swift */,
 			);
 			path = "Network Status Observer";
 			sourceTree = "<group>";
@@ -251,12 +254,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfig.swift in Sources */,
+				DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfigService.swift in Sources */,
 				DA89F82328FAB82C001902FE /* SearchResponse.swift in Sources */,
 				DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */,
+				DA89F83B28FC6292001902FE /* NetworkStatusObserverDelegate.swift in Sources */,
 				DA89F82428FAB82C001902FE /* FilmResponse.swift in Sources */,
 				DA89F81F28FAB7DB001902FE /* RESTClient.swift in Sources */,
-				DA89F82E28FAD563001902FE /* FirebaseRemoteConfigDelegate.swift in Sources */,
+				DA89F82E28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift in Sources */,
 				DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */,
 				DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */,
 				DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */,
