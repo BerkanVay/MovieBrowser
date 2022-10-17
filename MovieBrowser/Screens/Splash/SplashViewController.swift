@@ -59,7 +59,7 @@ extension SplashViewController: FirebaseRemoteConfigServiceDelegate {
         self.welcomingTextLabel.text = FirebaseRemoteConfigService.shared.splashText
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-          print("Go to next screen")
+          self.performSegue(withIdentifier: "showSearch", sender: nil)
         }
         
         self.hasHandledNavigationOnce = true

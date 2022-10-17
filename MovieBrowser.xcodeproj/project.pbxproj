@@ -18,6 +18,12 @@
 		DA89F83428FAE003001902FE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F83328FAE003001902FE /* FirebaseAnalytics */; };
 		DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */; };
 		DA89F83B28FC6292001902FE /* NetworkStatusObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83A28FC6292001902FE /* NetworkStatusObserverDelegate.swift */; };
+		DA89F83E28FC7E33001902FE /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83D28FC7E33001902FE /* SearchTableViewController.swift */; };
+		DA89F84028FC7E5F001902FE /* SearchTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F83F28FC7E5F001902FE /* SearchTableViewModel.swift */; };
+		DA89F84228FC7F04001902FE /* SearchTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F84128FC7F04001902FE /* SearchTableViewDelegate.swift */; };
+		DA89F84528FCA673001902FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F84428FCA673001902FE /* Kingfisher */; };
+		DA89F84928FCAB9D001902FE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F84728FCAB9D001902FE /* SearchTableViewCell.swift */; };
+		DA89F84A28FCAB9D001902FE /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */; };
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
@@ -35,6 +41,11 @@
 		DA89F83028FAD6D3001902FE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DA89F83728FC61D7001902FE /* NetworkStatusObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusObserver.swift; sourceTree = "<group>"; };
 		DA89F83A28FC6292001902FE /* NetworkStatusObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusObserverDelegate.swift; sourceTree = "<group>"; };
+		DA89F83D28FC7E33001902FE /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		DA89F83F28FC7E5F001902FE /* SearchTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewModel.swift; sourceTree = "<group>"; };
+		DA89F84128FC7F04001902FE /* SearchTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDelegate.swift; sourceTree = "<group>"; };
+		DA89F84728FCAB9D001902FE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA89F84528FCA673001902FE /* Kingfisher in Frameworks */,
 				DA89F83428FAE003001902FE /* FirebaseAnalytics in Frameworks */,
 				DA89F82928FACD89001902FE /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
@@ -80,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				DA89F82F28FAD6B1001902FE /* Splash */,
+				DA89F83C28FC7E0B001902FE /* Search */,
 				DAF2365D28FAB4E600D40644 /* LaunchScreen.storyboard */,
 				DAF2365828FAB4E500D40644 /* Main.storyboard */,
 			);
@@ -147,6 +160,26 @@
 			path = "Network Status Observer";
 			sourceTree = "<group>";
 		};
+		DA89F83C28FC7E0B001902FE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				DA89F84628FCAB6C001902FE /* SearchTableViewCell */,
+				DA89F83D28FC7E33001902FE /* SearchTableViewController.swift */,
+				DA89F83F28FC7E5F001902FE /* SearchTableViewModel.swift */,
+				DA89F84128FC7F04001902FE /* SearchTableViewDelegate.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		DA89F84628FCAB6C001902FE /* SearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				DA89F84728FCAB9D001902FE /* SearchTableViewCell.swift */,
+				DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */,
+			);
+			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
 		DAF2364628FAB4E500D40644 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +227,7 @@
 			packageProductDependencies = (
 				DA89F82828FACD89001902FE /* FirebaseRemoteConfigSwift */,
 				DA89F83328FAE003001902FE /* FirebaseAnalytics */,
+				DA89F84428FCA673001902FE /* Kingfisher */,
 			);
 			productName = MovieBrowser;
 			productReference = DAF2364F28FAB4E500D40644 /* MovieBrowser.app */;
@@ -225,6 +259,7 @@
 			mainGroup = DAF2364628FAB4E500D40644;
 			packageReferences = (
 				DA89F82728FACD89001902FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				DA89F84328FCA673001902FE /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = DAF2365028FAB4E500D40644 /* Products */;
 			projectDirPath = "";
@@ -244,6 +279,7 @@
 				DA89F82628FACBF0001902FE /* GoogleService-Info.plist in Resources */,
 				DAF2365C28FAB4E600D40644 /* Assets.xcassets in Resources */,
 				DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */,
+				DA89F84A28FCAB9D001902FE /* SearchTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,13 +293,17 @@
 				DA89F82C28FAD0FD001902FE /* FirebaseRemoteConfigService.swift in Sources */,
 				DA89F82328FAB82C001902FE /* SearchResponse.swift in Sources */,
 				DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */,
+				DA89F84028FC7E5F001902FE /* SearchTableViewModel.swift in Sources */,
 				DA89F83B28FC6292001902FE /* NetworkStatusObserverDelegate.swift in Sources */,
+				DA89F84228FC7F04001902FE /* SearchTableViewDelegate.swift in Sources */,
 				DA89F82428FAB82C001902FE /* FilmResponse.swift in Sources */,
 				DA89F81F28FAB7DB001902FE /* RESTClient.swift in Sources */,
 				DA89F82E28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift in Sources */,
 				DA89F83828FC61D8001902FE /* NetworkStatusObserver.swift in Sources */,
+				DA89F83E28FC7E33001902FE /* SearchTableViewController.swift in Sources */,
 				DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */,
 				DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */,
+				DA89F84928FCAB9D001902FE /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +529,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		DA89F84328FCA673001902FE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -501,6 +549,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DA89F82728FACD89001902FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalytics;
+		};
+		DA89F84428FCA673001902FE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA89F84328FCA673001902FE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
