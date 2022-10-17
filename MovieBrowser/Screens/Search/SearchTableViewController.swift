@@ -44,6 +44,20 @@ extension SearchTableViewController {
     
     return cell
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showDetail" {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        if let viewController = segue.destination as? DetailViewController {
+          viewController.movieId = viewModel.searchResult[indexPath.row].imdbID
+          print(viewModel.searchResult[indexPath.row].imdbID)
+        }
+      }
+    }
+  }
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "showDetail", sender: nil)
+  }
 }
 
 extension SearchTableViewController: SearchTableViewDelegate {
