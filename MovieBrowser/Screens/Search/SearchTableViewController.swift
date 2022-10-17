@@ -12,6 +12,7 @@ class SearchTableViewController: UITableViewController {
   
   private let searchController = UISearchController()
   var viewModel = SearchTableViewModel()
+  var indicator = UIActivityIndicatorView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,8 +20,10 @@ class SearchTableViewController: UITableViewController {
     navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.searchController = searchController
     viewModel.delegate = self
+    viewModel.searchResultStatus = .dataEmpty
     searchController.searchResultsUpdater = self
     tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    activityIndicator()
   }
 }
 
@@ -44,6 +47,45 @@ extension SearchTableViewController {
 }
 
 extension SearchTableViewController: SearchTableViewDelegate {
+  func configurateTableViewBackground() {
+    DispatchQueue.main.async {
+      switch self.viewModel.searchResultStatus {
+        
+      case .duringFetchData:
+        self.tableView.backgroundView = self.indicator
+        self.indicator.startAnimating()
+      case .dataFeched:
+        self.indicator.stopAnimating()
+      case .dataEmpty:
+        self.indicator.stopAnimating()
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+        view.center = self.tableView.center
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
+        if self.searchController.searchBar.text == "" {
+          label.text = "Pleas write something to search."
+        } else {
+          label.text = "No results were found."
+        }
+        label.center = view.center
+        label.textAlignment = .center
+        label.textColor = .black
+        view.addSubview(label)
+        self.tableView.backgroundView = view
+        self.reloadData()
+      }
+    }
+  }
+  
+  func activityIndicator() {
+    DispatchQueue.main.async {
+      
+      self.indicator.hidesWhenStopped = true
+      self.indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+      self.indicator.center = self.view.center
+      self.tableView.addSubview(self.indicator)
+    }
+  }
+  
   func reloadData() {
     DispatchQueue.main.async {
       self.tableView.reloadData()

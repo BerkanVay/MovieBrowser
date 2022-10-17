@@ -10,13 +10,32 @@ import Foundation
 
 class SearchTableViewModel {
   weak var delegate: SearchTableViewDelegate?
+  var searchResultStatus: SearchResultStatus = .dataEmpty {
+    didSet {
+      delegate?.configurateTableViewBackground()
+    }
+  }
   var searchResult: [SearchResponse.Item] = []
   var searchText = "" {
     didSet {
       Task {
+        searchResultStatus = .duringFetchData
         searchResult = (try? await RESTClient.getSearchResult(searchWord: searchText))?.items ?? []
         self.delegate?.reloadData()
+        
+        if searchResult.isEmpty {
+          searchResultStatus = .dataEmpty
+        } else {
+          searchResultStatus = .dataFeched
+        }
       }
     }
   }
+  
+  enum SearchResultStatus {
+    case duringFetchData
+    case dataFeched
+    case dataEmpty
+  }
 }
+

@@ -9,4 +9,5 @@ import Foundation
 
 protocol SearchTableViewDelegate: AnyObject {
   func reloadData()
+  func configurateTableViewBackground()
 }
