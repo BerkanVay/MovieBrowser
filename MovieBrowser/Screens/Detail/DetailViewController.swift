@@ -15,7 +15,7 @@ class DetailViewController: UIViewController {
   @IBOutlet private weak var countryLabel: UILabel!
   @IBOutlet private weak var languageLabel: UILabel!
   
-  var viewModel = DetailViewModel()
+  private let viewModel = DetailViewModel()
   var movieId: String? {
     get {
       viewModel.movieId
@@ -29,23 +29,25 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel.delegate = self
-    guard let moviewDetail = viewModel.movieDetail else {
-      return
-    }
-    if let url = URL(string: moviewDetail.posterURLString) {
-      posterImageView.kf.setImage(with: url)
-    }
-    titleLabel.text = moviewDetail.title
-    relasedLabel.text = moviewDetail.released
-    countryLabel.text  = moviewDetail.country
-    languageLabel.text = moviewDetail.language
+    reloadMovieData()
   }
 }
 
 extension DetailViewController: DetailViewModelDelegate {
-  func reloadData() {
+  func reloadMovieData() {
+    configurate()
+  }
+}
+
+extension DetailViewController {
+  private func configurate() {
     DispatchQueue.main.async {
-      self.reloadData()
+      self.posterImageView.kf.setImage(with: self.viewModel.movieDetail?.realPosterURL)
+      self.titleLabel.text = self.viewModel.movieDetail?.title
+      self.relasedLabel.text = self.viewModel.movieDetail?.released
+      self.countryLabel.text  = self.viewModel.movieDetail?.country
+      self.languageLabel.text = self.viewModel.movieDetail?.language
     }
   }
 }
+

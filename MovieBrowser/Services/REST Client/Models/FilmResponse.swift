@@ -21,7 +21,13 @@ struct FilmResponse: Decodable {
   let imdbRating: String
   let imdbVotes: String
   let type: String
-  
+  var realPosterURL: URL {
+    if posterURLString == "N/A" {
+      return URL(string: "https://icon-library.com/images/no-image-icon/no-image-icon-5.jpg")!
+    } else {
+      return URL(string: posterURLString)!
+    }
+  }
   enum CodingKeys: String, CodingKey {
     case title = "Title"
     case year = "Year"

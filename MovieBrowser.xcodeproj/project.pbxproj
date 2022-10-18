@@ -27,6 +27,7 @@
 		DA89F84528FCA673001902FE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DA89F84428FCA673001902FE /* Kingfisher */; };
 		DA89F84928FCAB9D001902FE /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA89F84728FCAB9D001902FE /* SearchTableViewCell.swift */; };
 		DA89F84A28FCAB9D001902FE /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */; };
+		DAC9CB2828FEB72B00C54FE5 /* FirebaseLogEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9CB2728FEB72B00C54FE5 /* FirebaseLogEventService.swift */; };
 		DAF2365328FAB4E500D40644 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365228FAB4E500D40644 /* AppDelegate.swift */; };
 		DAF2365528FAB4E500D40644 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF2365428FAB4E500D40644 /* SceneDelegate.swift */; };
 		DAF2365A28FAB4E500D40644 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAF2365828FAB4E500D40644 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		DA89F84128FC7F04001902FE /* SearchTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewDelegate.swift; sourceTree = "<group>"; };
 		DA89F84728FCAB9D001902FE /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		DAC9CB2728FEB72B00C54FE5 /* FirebaseLogEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseLogEventService.swift; sourceTree = "<group>"; };
 		DAF2364F28FAB4E500D40644 /* MovieBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF2365228FAB4E500D40644 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF2365428FAB4E500D40644 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		DA89F81C28FAB6D2001902FE /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DA89F82A28FAD0DA001902FE /* Firebase Remote Config */,
+				DA89F82A28FAD0DA001902FE /* Firebase */,
 				DA89F81D28FAB729001902FE /* REST Client */,
 				DA89F83928FC61DD001902FE /* Network Status Observer */,
 			);
@@ -144,13 +146,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DA89F82A28FAD0DA001902FE /* Firebase Remote Config */ = {
+		DA89F82A28FAD0DA001902FE /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfigService.swift */,
-				DA89F82D28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift */,
+				DAC9CB2528FEB6A000C54FE5 /* Remote Config */,
+				DAC9CB2628FEB6C300C54FE5 /* Log Event */,
 			);
-			path = "Firebase Remote Config";
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		DA89F82F28FAD6B1001902FE /* Splash */ = {
@@ -195,6 +197,23 @@
 				DA89F84828FCAB9D001902FE /* SearchTableViewCell.xib */,
 			);
 			path = SearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		DAC9CB2528FEB6A000C54FE5 /* Remote Config */ = {
+			isa = PBXGroup;
+			children = (
+				DA89F82B28FAD0FD001902FE /* FirebaseRemoteConfigService.swift */,
+				DA89F82D28FAD563001902FE /* FirebaseRemoteConfigServiceDelegate.swift */,
+			);
+			path = "Remote Config";
+			sourceTree = "<group>";
+		};
+		DAC9CB2628FEB6C300C54FE5 /* Log Event */ = {
+			isa = PBXGroup;
+			children = (
+				DAC9CB2728FEB72B00C54FE5 /* FirebaseLogEventService.swift */,
+			);
+			path = "Log Event";
 			sourceTree = "<group>";
 		};
 		DAF2364628FAB4E500D40644 = {
@@ -324,6 +343,7 @@
 				DA1A74C728FDFFA600862D6E /* DetailViewController.swift in Sources */,
 				DA89F83128FAD6D3001902FE /* SplashViewController.swift in Sources */,
 				DA89F84928FCAB9D001902FE /* SearchTableViewCell.swift in Sources */,
+				DAC9CB2828FEB72B00C54FE5 /* FirebaseLogEventService.swift in Sources */,
 				DA1A74C928FDFFCD00862D6E /* DetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +424,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -457,6 +478,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

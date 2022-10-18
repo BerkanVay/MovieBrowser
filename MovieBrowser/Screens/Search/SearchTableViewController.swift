@@ -24,6 +24,7 @@ class SearchTableViewController: UITableViewController {
     searchController.searchResultsUpdater = self
     tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     activityIndicator()
+    navigationItem.hidesBackButton = true
   }
 }
 
@@ -38,9 +39,7 @@ extension SearchTableViewController {
     }
     let searchResponseItem = viewModel.searchResult[indexPath.row]
     cell.movieTitleLabel.text = searchResponseItem.title
-    if let url = URL(string: searchResponseItem.posterURLString){
-      cell.movieImageView.kf.setImage(with: url)
-    }
+    cell.movieImageView.kf.setImage(with: searchResponseItem.realPosterURL)
     
     return cell
   }
@@ -50,7 +49,6 @@ extension SearchTableViewController {
       if let indexPath = self.tableView.indexPathForSelectedRow {
         if let viewController = segue.destination as? DetailViewController {
           viewController.movieId = viewModel.searchResult[indexPath.row].imdbID
-          print(viewModel.searchResult[indexPath.row].imdbID)
         }
       }
     }
@@ -90,9 +88,8 @@ extension SearchTableViewController: SearchTableViewDelegate {
     }
   }
   
-  func activityIndicator() {
+  private func activityIndicator() {
     DispatchQueue.main.async {
-      
       self.indicator.hidesWhenStopped = true
       self.indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
       self.indicator.center = self.view.center

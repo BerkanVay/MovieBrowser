@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailViewModelDelegate: AnyObject {
-  func reloadData()
+  func reloadMovieData()
 }

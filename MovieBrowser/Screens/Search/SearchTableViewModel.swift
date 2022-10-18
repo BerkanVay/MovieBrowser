@@ -22,7 +22,7 @@ class SearchTableViewModel {
         searchResultStatus = .duringFetchData
         searchResult = (try? await RESTClient.getSearchResult(searchWord: searchText))?.items ?? []
         self.delegate?.reloadData()
-        
+
         if searchResult.isEmpty {
           searchResultStatus = .dataEmpty
         } else {

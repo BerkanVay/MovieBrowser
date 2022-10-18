@@ -41,7 +41,7 @@ class RESTClient {
     guard let url = urlComponents.url else {
       throw NetworkingError.invalidURL
     }
-    
+    print(url)
     let (data, _) = try await URLSession.shared.data(from: url)
     
     return try jsonDecoder.decode(T.self, from: data)

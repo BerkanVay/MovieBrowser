@@ -20,6 +20,14 @@ struct SearchResponse: Decodable {
     let imdbID: String
     let type: String
     let posterURLString: String
+    var realPosterURL: URL {
+      if posterURLString == "N/A" {
+        return URL(string: "https://icon-library.com/images/no-image-icon/no-image-icon-5.jpg")!
+      } else {
+        return URL(string: posterURLString)!
+      }
+    }
+    
     
     enum CodingKeys: String, CodingKey {
       case title = "Title"
