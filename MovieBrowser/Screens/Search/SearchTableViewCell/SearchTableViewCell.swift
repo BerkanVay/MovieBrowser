@@ -28,4 +28,3 @@ class SearchTableViewCell: UITableViewCell {
     movieImageView.kf.setImage(with: item.realPosterURL)
   }
 }
-

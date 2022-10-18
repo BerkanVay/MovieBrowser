@@ -46,4 +46,3 @@ class RESTClient {
     return try jsonDecoder.decode(T.self, from: data)
   }
 }
-

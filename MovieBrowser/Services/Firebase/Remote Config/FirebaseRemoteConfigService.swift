@@ -54,4 +54,3 @@ class FirebaseRemoteConfigService {
     remoteConfig.configSettings = settings
   }
 }
-

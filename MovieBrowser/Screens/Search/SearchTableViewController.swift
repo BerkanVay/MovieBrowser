@@ -72,7 +72,7 @@ extension SearchTableViewController: SearchTableViewDelegate {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
         view.center = self.tableView.center
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
-        if self.searchController.searchBar.text == "" {
+        if self.searchController.searchBar.text?.isEmpty ?? true {
           label.text = "Pleas write something to search."
         } else {
           label.text = "No results were found."

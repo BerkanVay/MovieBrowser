@@ -69,5 +69,3 @@ extension SplashViewController: FirebaseRemoteConfigServiceDelegate {
     }
   }
 }
-
-
