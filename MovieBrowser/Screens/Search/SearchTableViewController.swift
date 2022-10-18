@@ -37,7 +37,7 @@ extension SearchTableViewController {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? SearchTableViewCell else {
       return UITableViewCell()
     }
-    let searchResponseItem = viewModel.searchResult[indexPath.row]
+     let searchResponseItem = viewModel.searchResult[indexPath.row]
     cell.movieTitleLabel.text = searchResponseItem.title
     cell.movieImageView.kf.setImage(with: searchResponseItem.realPosterURL)
     
