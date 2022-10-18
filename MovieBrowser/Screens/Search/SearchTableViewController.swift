@@ -9,22 +9,24 @@ import UIKit
 import Kingfisher
 
 class SearchTableViewController: UITableViewController {
-  
   private let searchController = UISearchController()
-  var viewModel = SearchTableViewModel()
-  var indicator = UIActivityIndicatorView()
+  private var viewModel = SearchTableViewModel()
+  private var indicator = UIActivityIndicatorView()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = "Search"
+    setup()
+  }
+  
+  private func setup(){
     navigationController?.navigationBar.prefersLargeTitles = true
+    navigationItem.hidesBackButton = true
     navigationItem.searchController = searchController
     viewModel.delegate = self
     viewModel.searchResultStatus = .dataEmpty
     searchController.searchResultsUpdater = self
     tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-    activityIndicator()
-    navigationItem.hidesBackButton = true
+    createActivityIndicator()
   }
 }
 
@@ -34,12 +36,10 @@ extension SearchTableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? SearchTableViewCell else {
-      return UITableViewCell()
-    }
-     let searchResponseItem = viewModel.searchResult[indexPath.row]
-    cell.movieTitleLabel.text = searchResponseItem.title
-    cell.movieImageView.kf.setImage(with: searchResponseItem.realPosterURL)
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? SearchTableViewCell else { return UITableViewCell()}
+    
+    let searchResponseItem = viewModel.searchResult[indexPath.row]
+    cell.item = searchResponseItem
     
     return cell
   }
@@ -59,7 +59,7 @@ extension SearchTableViewController {
 }
 
 extension SearchTableViewController: SearchTableViewDelegate {
-  func configurateTableViewBackground() {
+  func statusHasChanged() {
     DispatchQueue.main.async {
       switch self.viewModel.searchResultStatus {
         
@@ -69,7 +69,6 @@ extension SearchTableViewController: SearchTableViewDelegate {
       case .dataFeched:
         self.indicator.stopAnimating()
       case .dataEmpty:
-        self.indicator.stopAnimating()
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
         view.center = self.tableView.center
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 21))
@@ -83,18 +82,16 @@ extension SearchTableViewController: SearchTableViewDelegate {
         label.textColor = .black
         view.addSubview(label)
         self.tableView.backgroundView = view
-        self.reloadData()
       }
     }
   }
   
-  private func activityIndicator() {
-    DispatchQueue.main.async {
-      self.indicator.hidesWhenStopped = true
-      self.indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-      self.indicator.center = self.view.center
-      self.tableView.addSubview(self.indicator)
-    }
+  private func createActivityIndicator() {
+    indicator.hidesWhenStopped = true
+    indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+    indicator.center = self.view.center
+    tableView.addSubview(self.indicator)
+    
   }
   
   func reloadData() {

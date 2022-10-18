@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="1749.2307692307693" y="-2.1327014218009479"/>
         </scene>
-        <!--Search Table View Controller-->
+        <!--Search-->
         <scene sceneID="2dk-gI-FJe">
             <objects>
-                <tableViewController id="0eO-SG-1kv" customClass="SearchTableViewController" customModule="MovieBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Search" id="0eO-SG-1kv" customClass="SearchTableViewController" customModule="MovieBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="128" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7TO-lM-Fon">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,7 +68,7 @@
                             <outlet property="delegate" destination="0eO-SG-1kv" id="SjJ-wG-r8G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bLi-qF-J12"/>
+                    <navigationItem key="navigationItem" title="Search" id="bLi-qF-J12"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9H-kI-Vy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,8 +127,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relased Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-6Y-W9x">
-                                <rect key="frame" x="30.000000000000007" y="342.33333333333331" width="116.66666666666669" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Released Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-6Y-W9x">
+                                <rect key="frame" x="30" y="342.33333333333331" width="127" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -168,7 +168,7 @@
                         <outlet property="countryLabel" destination="zGm-un-VB4" id="g4V-OR-86F"/>
                         <outlet property="languageLabel" destination="Glu-Tf-qrX" id="8Ni-d1-1m7"/>
                         <outlet property="posterImageView" destination="U6Z-j8-4I3" id="JHg-Mq-uNg"/>
-                        <outlet property="relasedLabel" destination="4gc-7G-98c" id="CG2-gi-8qY"/>
+                        <outlet property="releasedLabel" destination="4gc-7G-98c" id="WX8-ZL-WK7"/>
                         <outlet property="titleLabel" destination="qBb-gx-v1c" id="tu2-Oe-aEF"/>
                     </connections>
                 </viewController>

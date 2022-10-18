@@ -11,7 +11,7 @@ import Kingfisher
 class DetailViewController: UIViewController {
   @IBOutlet private weak var posterImageView: UIImageView!
   @IBOutlet private weak var titleLabel: UILabel!
-  @IBOutlet private weak var relasedLabel: UILabel!
+  @IBOutlet private weak var releasedLabel: UILabel!
   @IBOutlet private weak var countryLabel: UILabel!
   @IBOutlet private weak var languageLabel: UILabel!
   
@@ -44,7 +44,7 @@ extension DetailViewController {
     DispatchQueue.main.async {
       self.posterImageView.kf.setImage(with: self.viewModel.movieDetail?.realPosterURL)
       self.titleLabel.text = self.viewModel.movieDetail?.title
-      self.relasedLabel.text = self.viewModel.movieDetail?.released
+      self.releasedLabel.text = self.viewModel.movieDetail?.released
       self.countryLabel.text  = self.viewModel.movieDetail?.country
       self.languageLabel.text = self.viewModel.movieDetail?.language
     }

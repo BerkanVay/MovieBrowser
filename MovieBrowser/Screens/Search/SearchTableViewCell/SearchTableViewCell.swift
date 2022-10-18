@@ -8,8 +8,10 @@
 import UIKit
 
 class SearchTableViewCell: UITableViewCell {
-  @IBOutlet weak var movieImageView: UIImageView!
-  @IBOutlet weak var movieTitleLabel: UILabel!
+  @IBOutlet private weak var movieImageView: UIImageView!
+  @IBOutlet private weak var movieTitleLabel: UILabel!
+  
+  var item: SearchResponse.Item? = nil
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -17,5 +19,13 @@ class SearchTableViewCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
+    configurate()
+  }
+  
+  private func configurate(){
+    guard let item else { return }
+    movieTitleLabel.text = item.title
+    movieImageView.kf.setImage(with: item.realPosterURL)
   }
 }
+

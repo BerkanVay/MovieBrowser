@@ -23,10 +23,10 @@ class DetailViewModel {
       Task {
         movieDetail = (try? await RESTClient.getFilmResult(imdbID: movieId))
         guard let movieDetail else { return }
-        FirebaseLogEventService.logEvent(eventName: "title", eventDescription: movieDetail.title)
-        FirebaseLogEventService.logEvent(eventName: "released_date", eventDescription: movieDetail.released)
-        FirebaseLogEventService.logEvent(eventName: "country", eventDescription: movieDetail.country)
-        FirebaseLogEventService.logEvent(eventName: "language", eventDescription: movieDetail.country)
+        FirebaseLogEventService.logEvent(eventName: "detail_screen_viewed", eventDetailName: "title", eventDescription: movieDetail.title)
+        FirebaseLogEventService.logEvent(eventName: "detail_screen_viewed", eventDetailName: "released_date", eventDescription: movieDetail.released)
+        FirebaseLogEventService.logEvent(eventName: "detail_screen_viewed", eventDetailName: "country", eventDescription: movieDetail.country)
+        FirebaseLogEventService.logEvent(eventName: "detail_screen_viewed", eventDetailName: "language", eventDescription: movieDetail.country)
       }
     }
   }
